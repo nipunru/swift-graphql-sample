@@ -90,3 +90,6 @@ fastlane/test_output
 iOSInjectionProject/
 
 Pods
+OtriumGithub/Environments/QA.xcconfig
+OtriumGithub/Environments/Debug.xcconfig
+OtriumGithub/Environments/Release.xcconfig
