@@ -10,24 +10,16 @@ import XCTest
 
 class OtriumGithubTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testProfileFetch() throws {
+        let username = "rmosolgo"
+        let viewController = ProfileViewController()
+        
+        let presenter = ProfilePresenter()
+        presenter.setViewDelegate(delegate: viewController)
+        presenter.fetchProfile(username: username)
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        XCTAssertEqual(viewController.lblUsername.text, username)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
